@@ -2,13 +2,13 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include <list>
 #include <cmath>
 
 using namespace std;
 
 double Dmax = 20;
 double Dmin = 1;
+
 struct Dot {
     int number;
     int area;
@@ -111,7 +111,7 @@ int main()
 	vector <double> a;
 	//int n = 2;
 
-	for (int i = 1; i < 2; i++)
+	for (int i = 20; i < 304; i+=20)
 	{
 		ifstream fin{ "D:\\files\\file\\data- (" + to_string(i) + ").txt" };
 		if (!fin)
@@ -142,7 +142,6 @@ int main()
 	//for (const Dot& z : Ar) cout << z;
 	cout << "AR lower 2: " << Ar.size();
 
-	double size = a.size() - p.size();
 	vector<vector<double>> matrix = MatrixFirst(Ar, Dmin, Dmax);
 	vector<vector<double>> matrix2 = MatrixSecond(Ar, Dmin, Dmax);
 
